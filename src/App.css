@@ -1,0 +1,168 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+
+body {
+  background-color: #07081C;
+  color: #4E6393;
+  font-family: "Inter", sans-serif;
+  overflow-y: auto;
+  font-size: 0.8rem;
+}
+
+.btn{
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+  width:max-content
+}
+
+.btn1{
+  background-color: #5e5e5e;
+}
+
+.btn2{
+  background-color: #1788bd;
+}
+
+.sidebar i:nth-child(1){
+  font-size: 1.125rem;
+}
+
+.sidebar i:nth-child(2){
+  font-size: 0.75rem;
+}
+
+.sidebar .submenu i{
+  font-size: 1rem;
+}
+
+.sidebar{
+  transform: translateX(-100%);
+  transition: all ease 0.3s;
+}
+
+.sidebar.active{
+  transform: translateX(0);
+  transition: all ease 0.3s;
+}
+
+@media screen and (min-width:1024px) {
+  .sidebar{
+    transform: translateX(0);
+  }
+  
+  .sidebar.active{
+    transform: translateX(0);
+  }
+}
+
+.sidebar .menu{
+  padding: 0.75rem 2rem;
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+  cursor: pointer;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 0;
+}
+
+.sidebar .submenu{
+  height:0;
+  overflow: hidden;
+  display: none;
+  flex-direction: column;
+  gap:0.25rem;
+  transition: all ease 0.3s;
+  /* transform: translateY(-1.25rem); */
+  padding: 0.25rem 0;
+  z-index: -10;
+}
+
+.sidebar .menu.view~.submenu{
+  height:auto;
+  display: flex;
+  /* transform: translateY(0); */
+}
+
+.sidebar .submenu li{
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+  cursor: pointer;
+  font-size:0.85rem
+}
+
+.sidebar .submenu li a{
+  padding: 0.75rem 3.5rem;
+}
+
+.sidebar .menu:hover,.sidebar .submenu li:hover,.sidebar .submenu li.active{
+  background-color: #393945;
+}
+
+.sidebar .menu.active{
+  background-color: #406792;
+  color:#9CAAC0;
+}
+
+.sidebar .menu.active .fa-chevron-left{
+  transform: rotate(-90deg);
+  transition: all ease 0.3s;
+}
+
+
+
+
+
+input.active{
+  border:1px solid #838383;
+}
+
+.sidebar::-webkit-scrollbar{
+  display: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 12px;
+    background-color: #2e2e2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #535353;
+    border-radius: 6px;
+    border: 3px solid #2f2f2f;
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a8a8a8;
+}
+
+::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23bbbbbb" d="M20 3h-1V1h-2v2H7V1H5v2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 18H4V8h16v13z"/></svg>');
+}
+
+ /* update color & background for today date */
+ .slds-datepicker tbody>tr>td.slds-is-today>.slds-day {
+  background: green;
+  color: blue;
+}
+
+/* update color & background for selected date */
+.slds-datepicker tbody>tr>td.slds-is-selected>.slds-day {
+  background: red;
+  color: pink;
+  font-weight: 700;
+}
+
+/* update color & background for hover date */
+.slds-datepicker tbody>tr>td:hover span {
+  background: red !important;
+} 
